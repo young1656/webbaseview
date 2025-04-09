@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px; /* Increased base font size */
+}
+
+canvas {
+    width: 100% !important;
+    max-width: 800px;
+    height: 400px !important;
+}
+
+.container {
+    max-width: 500px; /* Increased container width */
+    border-radius: 10px;
+    margin: 150px auto; /* Adjusted margin for better centering */
+    padding: 50px; /* Increased padding */
+    background-color: #202024;
+    box-shadow: 0px 0px 250px rgba(240, 240, 255, 0.5); /* Enhanced box shadow */
+}
+
+.container img {
+    width: 100%; /* Ensures the image fits the container */
+    height: auto; /* Maintains aspect ratio */
+    max-width: 100%; /* Prevents overflow */
+    display: block; /* Removes extra spacing */
+    margin: 0 auto; /* Centers the image */
+}
+
+/* Style for the buttons at the top */
+.accountStuff {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.accountStuff button {
+    padding: 8px 18px; /* Increased padding for slightly larger buttons */
+    border: none;
+    background-color: #6FA8DC; /* Default blue */
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px; /* Increased font size */
+}
+
+.accountStuff button:hover {
+    background-color: #4A90E2; /* Lighter blue on hover */
+}
+
+/* Style for the "Sign Out" button to make it darker */
+.accountStuff button:first-child {
+    background-color: #3B7BBF; /* Darker blue for Sign Out */
+}
+
+.accountStuff button:first-child:hover {
+    background-color: #2C6D99; /* Darker blue on hover */
+}
+
+/* Style for input and button alignment */
+.calories-input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#calories-input {
+    flex-grow: 1; /* Makes the input field take available space */
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: #333;
+    color: white;
+}
+
+#add-calories-btn {
+    padding: 10px 20px; /* Increased padding */
+    font-size: 16px; /* Increased font size */
+    background-color: lightblue;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    white-space: nowrap;
+    margin-left: auto; /* Pushes the button to the right */
+}
+
+#add-calories-btn:hover {
+    background-color: darkblue;
+}
+
+
+/* Links */
+a:link, a:visited, a:hover, a:active {
+    color: lightblue;
+    text-decoration: none;
+    font-size: 18px; /* Increased link font size */
+}
+
+/* Error message */
+#error-msg {
+    color: yellow;
+    font-size: 18px; /* Increased error message font size */
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Intake Chart</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="calorie_chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .chart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+        }
+        canvas {
+            width: 80% !important;
+            max-width: 800px;
+            height: 400px !important;
+        }
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #6FA8DC;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            background-color: #4A90E2;
+        }
+    </style>
+</head>
+<body>
+<h1>Calorie Intake Over the Past 5 Days</h1>
+<div class="chart-container">
+    <canvas id="calorieChart"></canvas>
+    <button class="back-button" onclick="location.href='calorieViewAndAdd.html'">Back to Main Page</button>
+</div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const ctx = document.getElementById('calorieChart').getContext('2d');
+        if (!ctx) {
+            console.error("Canvas element not found.");
+            return;
+        }
+    });
+</script>
+
+
+</html>

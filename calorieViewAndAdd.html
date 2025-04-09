@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta charset="UTF-8">
+    <title>QuickCalorie</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .calories-remaining {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .accountStuff {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        .accountStuff button {
+            padding: 5px 15px;
+            border: none;
+            background-color: #6FA8DC;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .accountStuff button:hover {
+            background-color: #4A90E2;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="accountStuff">
+        <button onclick="location.href='logout.html'">Sign Out</button>
+        <button onclick="location.href='display.html'">View Account</button>
+        <button onclick="location.href='BMRCalc.html'">Calculate BMR/Set Goal</button>
+        <button onclick="location.href='calorie_chart.html'">History</button>
+    </div>
+    <div class="calories-remaining">
+        <h2>Calories Remaining:</h2>
+        <h3 id="calorie-display">null</h3>
+    </div>
+
+    <label>
+        Enter Calories eaten:
+        <input type="number" id="calories-input" />
+    </label>
+
+    <button id="add-calories-btn">Add Calories</button>
+    <p id="error-msg"></p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="updateMain.js"></script>
+<script src="offlineRedirect.js"></script>
+
+<script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/webbase/serviceWorker.js")
+            .then((registration) => {
+                console.log("Service Worker registered with scope:", registration.scope);
+            })
+            .catch((error) => {
+                console.error("Service Worker registration failed:", error);
+            });
+    }
+</script>
+
+</body>
+</html>

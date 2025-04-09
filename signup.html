@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Sign Up</h2>
+    <input type="text" id="first-name" placeholder="First Name" required>
+    <input type="text" id="last-name" placeholder="Last Name" required>
+    <input type="text" id="city" placeholder="City" required>
+    <input type="text" id="email" placeholder="Email" required>
+    <input type="text" id="password" placeholder="Password" required>
+
+    <!-- Timezone Dropdown -->
+    <label for="timezone">Select Timezone</label>
+    <select id="timezone" required>
+        <option value="America/Chicago">Central Time (US)</option>
+        <option value="America/New_York">Eastern Time (US)</option>
+        <option value="America/Phoenix">Mountain Time (US)</option>
+        <option value="America/Los_Angeles">Pacific Time (US)</option>
+        <option value="Europe/London">London</option>
+        <option value="Europe/Berlin">Berlin</option>
+        <option value="Europe/Moscow">Moscow</option>
+        <option value="Asia/Dubai">Dubai</option>
+        <option value="Asia/Mumbai">Mumbai</option>
+        <option value="Asia/Singapore">Singapore</option>
+        <option value="Asia/Tokyo">Tokyo</option>
+        <option value="Oceania/Sydney">Sydney</option>
+        <option value="Oceania/Auckland">Auckland</option>
+    </select>
+
+    <button id="signup-btn">Sign Up</button>
+    <p id="error-msg"></p>
+    <a href="index.html">Already have an account? Login here</a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Determine your BMR</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+</head>
+<body>
+
+<div class = "container">
+    <a href = "calorieViewAndAdd.html" >Go back</a>
+    <p id = "error-msg" ></p>
+    <h2>Calculate your BMR (Basal Metabolic Rate)</h2>
+    <input type="text" placeholder="Height (in cm)">
+    <input type="text" placeholder="Weight (in Kg)">
+    <input type="text" placeholder="Age">
+    <input type="text" placeholder="Male or Female?">
+    <button id = "calculate-bmr">Calculate</button>
+
+    <h3>Or... Set your own goal</h3>
+    <input type="text" placeholder="Calories">
+    <button id = "set-goal">Set Goal</button>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src = "bmrcalc.js"></script>
+<script src="offlineRedirect.js"></script>
+<script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("serviceWorker.js")
+            .then(() => console.log("Service Worker Registered"))
+            .catch((err) => console.error("Service Worker Registration Failed", err));
+    }
+</script>
+</body>
+</html>
