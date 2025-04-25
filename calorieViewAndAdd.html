@@ -40,6 +40,11 @@
 <body>
 
 <div class="container">
+    <label id="mode-label" style="position: absolute; top: 20px; left: 20px; color: white;">
+        <input type="checkbox" id="mode-toggle" />
+        Light Mode
+    </label>
+
     <div class="accountStuff">
         <button onclick="location.href='logout.html'">Sign Out</button>
         <button onclick="location.href='display.html'">View Account</button>
@@ -75,6 +80,25 @@
             });
     }
 </script>
+
+<script>
+    const toggle = document.getElementById('mode-toggle');
+    const body = document.body;
+
+    // Load previous mode if saved
+    if (localStorage.getItem('theme') === 'light') {
+        body.classList.add('light-mode');
+        toggle.checked = true;
+    }
+
+    toggle.addEventListener('change', () => {
+        body.classList.toggle('light-mode');
+        localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+    });
+</script>
+
+
+
 
 </body>
 </html>

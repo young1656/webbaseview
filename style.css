@@ -105,3 +105,68 @@ a:link, a:visited, a:hover, a:active {
     color: yellow;
     font-size: 18px; /* Increased error message font size */
 }
+
+/* stuff below is for the light mode*/
+body.light-mode {
+    background-color: white;
+    color: #222;
+}
+
+body.light-mode .container {
+    background-color: #f0f0f0;
+    box-shadow: 0px 0px 50px rgba(50, 50, 50, 0.3);
+}
+
+body.light-mode #calories-input {
+    background-color: white;
+    color: #222;
+    border: 1px solid #888;
+}
+
+body.light-mode #add-calories-btn {
+    background-color: #007acc;
+    color: white;
+}
+
+body.light-mode #add-calories-btn:hover {
+    background-color: #005fa3;
+}
+
+body.light-mode .accountStuff button {
+    background-color: #007acc;
+    color: white;
+}
+
+body.light-mode .accountStuff button:hover {
+    background-color: #005fa3;
+}
+
+body.light-mode .accountStuff button:first-child {
+    background-color: #005fa3;
+}
+
+body.light-mode .accountStuff button:first-child:hover {
+    background-color: #004a80;
+}
+
+body.light-mode a {
+    color: #007acc;
+}
+
+body.light-mode #error-msg {
+    color: red;
+}
+.theme-label {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 16px;
+    z-index: 1000;
+}
+
+body.light-mode .theme-label {
+    color: black;
+}
+
+

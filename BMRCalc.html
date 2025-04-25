@@ -11,6 +11,10 @@
 <body>
 
 <div class = "container">
+    <label id="mode-label" style="position: absolute; top: 20px; left: 20px; color: white;">
+        <input type="checkbox" id="mode-toggle" />
+        Light Mode
+    </label>
     <a href = "calorieViewAndAdd.html" >Go back</a>
     <p id = "error-msg" ></p>
     <h2>Calculate your BMR (Basal Metabolic Rate)</h2>
@@ -34,6 +38,21 @@
             .then(() => console.log("Service Worker Registered"))
             .catch((err) => console.error("Service Worker Registration Failed", err));
     }
+</script>
+<script>
+    const toggle = document.getElementById('mode-toggle');
+    const body = document.body;
+
+    // Load previous mode if saved
+    if (localStorage.getItem('theme') === 'light') {
+        body.classList.add('light-mode');
+        toggle.checked = true;
+    }
+
+    toggle.addEventListener('change', () => {
+        body.classList.toggle('light-mode');
+        localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+    });
 </script>
 </body>
 </html>
