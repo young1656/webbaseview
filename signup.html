@@ -7,6 +7,10 @@
 </head>
 <body>
 <div class="container">
+    <label id="mode-label" style="position: absolute; top: 20px; left: 20px; color: white;">
+        <input type="checkbox" id="mode-toggle" />
+        Light Mode
+    </label>
     <h2>Sign Up</h2>
     <input type="text" id="first-name" placeholder="First Name" required>
     <input type="text" id="last-name" placeholder="Last Name" required>
@@ -38,5 +42,20 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="auth.js"></script>
+<script>
+    const toggle = document.getElementById('mode-toggle');
+    const body = document.body;
+
+    // Load previous mode if saved
+    if (localStorage.getItem('theme') === 'light') {
+        body.classList.add('light-mode');
+        toggle.checked = true;
+    }
+
+    toggle.addEventListener('change', () => {
+        body.classList.toggle('light-mode');
+        localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+    });
+</script>
 </body>
 </html>
