@@ -7,8 +7,27 @@
 </head>
 <body>
 <div class="container">
+    <label id="mode-label" style="position: absolute; top: 20px; left: 20px; color: white;">
+        <input type="checkbox" id="mode-toggle" />
+        Light Mode
+    </label>
     <h2>You're logged out</h2>
     <a href="index.html">Log back in</a>
 </div>
+<script>
+    const toggle = document.getElementById('mode-toggle');
+    const body = document.body;
+
+    // Load previous mode if saved
+    if (localStorage.getItem('theme') === 'light') {
+        body.classList.add('light-mode');
+        toggle.checked = true;
+    }
+
+    toggle.addEventListener('change', () => {
+        body.classList.toggle('light-mode');
+        localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+    });
+</script>
 </body>
 </html>
